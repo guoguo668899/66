@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金乡街道反诈智能平台</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .header {
+            background: #0078d4;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .header-button {
+            margin: 10px 0;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .marquee {
+            background: #0078d4;
+            padding: 35px 0 8px;
+            overflow: hidden;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+            color: white;
+            line-height: 1.8; /* 调整行高增强可读性 */
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .red {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        .case-button button {
+            background: white;
+            color: #ff4444 !important;
+            border: 1px solid #ff4444;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .case-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255,68,68,0.3);
+            background: #ffeeee;
+        }
+
+        .iframe-container {
+            flex: 1;
+            position: relative;
+            background: #f5f5f5;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100% - 10px);
+            border: none;
+            margin-top: -4vh;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            .header-button {
+                bottom: -20px;
+            }
+            .case-button button {
+                padding: 6px 15px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>金乡街道反诈AI智能体</h1>
+        <div class="case-button header-button">
+            <button onclick="window.location.href='https://news.qq.com/omn/author/8QIf3n9Z7I0UvT7a4gM%3D?tab=om_video'">点击观看诈骗案例</button>
+        </div>
+    </div>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            疑是诈骗，请第一时间拨打<span class="red">110</span>
+            <br>
+            将疑似诈骗详细经过输入对话框，识别诈骗套路！（识别结果仅供参考）
+            <br> <!-- 新增空白行 -->
+        </div>
+    </div>
+
+    <div class="iframe-container">
+        <iframe 
+            src="https://chat.scnet.cn/" 
+            title="国家超算互联网平台"
+            allow="fullscreen"
+            allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>
